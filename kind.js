@@ -14,6 +14,9 @@ export default function kind (obj) {
   if (typeof obj === 'boolean') {
     return 'bool'
   }
+  if (typeof obj === 'object' && obj.asCID === obj) {
+    return 'link'
+  }
   if (obj instanceof Uint8Array) {
     return 'bytes'
   }

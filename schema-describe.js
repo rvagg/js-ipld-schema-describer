@@ -1,11 +1,24 @@
 import kind from './kind.js'
 
-function describe (obj, schema = {}) {
+function describeObject (obj) {
+  const description = describe(obj, {})
+  if (!Object.keys(description.schema.types).length) {
+    // when `obj` is a terminal type, make up a typedef for that kind so we have
+    // something to point to for our root rather than the plain typed kind
+    const name = `$${description.root}`
+    description.schema.types[name] = { kind: description.root.toLowerCase() }
+    description.root = name
+  }
+  return description
+}
+
+function describe (obj, schema) {
   if (!schema.types) {
     schema.types = {}
   }
 
   const objKind = kind(obj)
+  let name = `${objKind.charAt(0).toUpperCase()}${objKind.substring(1)}`
 
   // terminals
   if (objKind === 'null' ||
@@ -13,63 +26,76 @@ function describe (obj, schema = {}) {
       objKind === 'bool' ||
       objKind === 'float' ||
       objKind === 'string' ||
+      objKind === 'link' ||
       objKind === 'bytes') {
-    const name = `$${objKind}_1`
-    schema.types[name] = { kind: objKind }
+    // schema.types[name] = { kind: objKind }
+    if (name === 'Link') {
+      name = '&Any'
+    }
     return { schema, root: name }
   }
 
   if (objKind === 'map' || objKind === 'list') {
-    const fieldDescriptions = []
-    const entries = objKind === 'map' ? Object.entries(obj) : obj.map((e, i) => [i, e])
+    const fieldNames = []
+    const entries = objKind === 'map' ? Object.entries(obj) : obj.map((e, i) => [`f${i}`, e])
     for (const [fieldName, value] of entries) {
-      fieldDescriptions.push({ fieldName, description: describe(value) })
+      fieldNames.push({ fieldName, root: describe(value, schema).root })
     }
     let unique = true
-    for (let i = 1; i < fieldDescriptions.length; i++) {
+    for (let i = 1; i < fieldNames.length; i++) {
       // this is a shallow assumption - that the name tells us the uniqueness, it doesn't
       // and this will have to be improved
-      if (fieldDescriptions[i].description.root !== fieldDescriptions[i - 1].description.root) {
+      if (fieldNames[i].root !== fieldNames[i - 1].root) {
         unique = false
         break
       }
     }
 
-    if (unique) { // a pure map
-      const name = `$${objKind}_1`
-      schema.types[name] = { kind: objKind }
+    name = `$${name}_1`
+    let type
+
+    if (unique) { // a pure map or list
+      type = { kind: objKind }
       if (objKind === 'map') {
-        schema.types[name].keyType = 'String'
+        type.keyType = 'String'
       }
-      schema.types[name].valueType = fieldDescriptions[0].description.root
-      merge(schema, fieldDescriptions[0].description.schema)
-      return { schema, root: name }
+      type.valueType = fieldNames[0].root
     } else { // a struct with varying types
-      schema.types.$struct_1 = {
+      name = '$Struct_1'
+      type = {
         kind: 'struct',
-        fields: fieldDescriptions.reduce((p, ed) => {
-          p[ed.fieldName] = { type: ed.description.root }
-          return p
-        }, {})
+        fields: {}
+      }
+      for (const field of fieldNames) {
+        type.fields[field.fieldName] = { type: field.root }
       }
       if (objKind === 'list') {
-        schema.types.$struct_1.representation = { tuple: '' }
+        type.representation = { tuple: {} }
       }
-      for (const { description } of fieldDescriptions) {
-        merge(schema, description.schema)
-      }
-      return { schema, root: '$struct_1' }
     }
+
+    while (schema.types[name]) {
+      if (deepEqual(schema.types[name], type)) {
+        break
+      }
+      name = name.split('_').map((s, i) => i ? parseInt(s, 10) + 1 : s).join('_')
+    }
+    schema.types[name] = type
+    // merge(schema, fieldNames[0].description.schema)
+    return { schema, root: name }
   }
 
   // return { schema, root: 'nope' }
   throw new Error('Too complicated, can\'t deal with this')
 }
 
+/*
 function merge (s1, s2) {
   for (const [typeName, typeDef] of Object.entries(s2.types)) {
     if (s1.types[typeName]) {
       if (!deepEqual(s1.types[typeName], typeDef)) {
+        console.dir(s1, { depth: Infinity })
+        console.dir(typeDef, { depth: Infinity })
         throw new Error('Can\'t currently deal with same name but different types')
       }
     } else {
@@ -77,6 +103,7 @@ function merge (s1, s2) {
     }
   }
 }
+*/
 
 function deepEqual (o1, o2) {
   const k1 = kind(o1)
@@ -106,4 +133,4 @@ function deepEqual (o1, o2) {
   return true
 }
 
-export default { describe }
+export default describeObject
