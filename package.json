@@ -1,0 +1,36 @@
+{
+  "name": "ipld-schema-describe",
+  "version": "0.0.0",
+  "description": "IPLD Schema describe",
+  "main": "schema-describe.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm run lint && mocha test/test-*.js",
+    "lint": "standard"
+  },
+  "exports": {
+    ".": {
+      "import": "./schema-describe.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rvagg/js-ipld-schema-describe.git"
+  },
+  "keywords": [
+    "IPLD",
+    "Schema"
+  ],
+  "author": "Rod <rod@vagg.org> (http://r.va.gg/)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rvagg/js-ipld-schema-describe/issues"
+  },
+  "homepage": "https://github.com/rvagg/js-ipld-schema-describe#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "ipld-schema": "^0.3.2",
+    "mocha": "^8.2.0",
+    "standard": "^14.3.4"
+  }
+}
