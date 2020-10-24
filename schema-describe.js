@@ -28,7 +28,6 @@ function describe (obj, schema) {
       objKind === 'string' ||
       objKind === 'link' ||
       objKind === 'bytes') {
-    // schema.types[name] = { kind: objKind }
     if (name === 'Link') {
       name = '&Any'
     }
@@ -59,7 +58,11 @@ function describe (obj, schema) {
       if (objKind === 'map') {
         type.keyType = 'String'
       }
-      type.valueType = fieldNames[0].root
+      if (fieldNames.length) {
+        type.valueType = fieldNames[0].root
+      } else {
+        type.valueType = 'Any'
+      }
     } else { // a struct with varying types
       name = '$Struct_1'
       type = {
@@ -85,25 +88,8 @@ function describe (obj, schema) {
     return { schema, root: name }
   }
 
-  // return { schema, root: 'nope' }
   throw new Error('Too complicated, can\'t deal with this')
 }
-
-/*
-function merge (s1, s2) {
-  for (const [typeName, typeDef] of Object.entries(s2.types)) {
-    if (s1.types[typeName]) {
-      if (!deepEqual(s1.types[typeName], typeDef)) {
-        console.dir(s1, { depth: Infinity })
-        console.dir(typeDef, { depth: Infinity })
-        throw new Error('Can\'t currently deal with same name but different types')
-      }
-    } else {
-      s1.types[typeName] = typeDef
-    }
-  }
-}
-*/
 
 function deepEqual (o1, o2) {
   const k1 = kind(o1)
