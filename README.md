@@ -1,11 +1,11 @@
-# ipld-schema-describe
+# ipld-schema-describer
 
-Provide an object that suits the Data Model and get a naive IPLD Schema description of it.
+Describe JavaScript object forms using [IPLD Schemas](https://specs.ipld.io/schemas/).
 
 ## Example
 
 ```js
-import schemaDescribe from 'ipld-schema-describe'
+import SchemaDescriber from 'ipld-schema-describer'
 import schemaPrint from 'ipld-schema/print.js'
 
 const obj = {
@@ -14,12 +14,12 @@ const obj = {
   baz: 'baz'
 }
 
-const { schema, root } = schemaDescribe(obj)
+const { schema, root } = SchemaDescriber.describe(obj)
 console.log(schemaPrint(schema))
-console.log('\nRoot: ', root)
+console.log('\nRoot:', root)
 ```
 
-Output:
+Prints:
 
 ```
 type $Struct_1 struct {
@@ -36,10 +36,14 @@ type $Struct_2 struct {
   baz String
 }
 
-Root:  $Struct_2
+Root: $Struct_2
 ```
 
-Note that **[ipld-schema](https://ghub.io/ipld-schema)** is needed to print the IPLD Schema language since this library only provides the object form.
+## Limitations
+
+Objects must conform to the [IPLD Data Model](https://docs.ipld.io/#the-data-model), so `undefined` is not supported and complex objects such as `Date`, `RegExp` and others should be avoided. Circular references are also not supported.
+
+The resulting IPLD Schema is only able to describe the raw representation layout. IPLD Schemas are capable of describing complex shapes that cannot be inferred without additional information. Unions and Enums in particular are not able to be inferred. The Schema output from this library can be used as the basis of the formation of a more correct and concice Schema for any data layout. Read more in the [IPLD Schemas documentation](https://specs.ipld.io/schemas/).
 
 ## License & Copyright
 

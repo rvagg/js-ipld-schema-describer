@@ -1,12 +1,15 @@
 /* eslint-env mocha */
 
-import schemaDescribe from 'ipld-schema-describe'
+import SchemaDescriber from 'ipld-schema-describer'
 import chai from 'chai'
 
 const { assert } = chai
 
+const fauxCID = {}
+fauxCID.asCID = fauxCID
+
 function verify (obj, expected) {
-  const description = schemaDescribe(obj)
+  const description = SchemaDescriber.describe(obj)
   assert.deepEqual(description, expected)
 }
 
@@ -41,6 +44,11 @@ describe('Basics', () => {
     verify('', expected)
   })
 
+  it('link', () => {
+    const expected = { schema: { types: { $Link: { kind: 'link' } } }, root: '$Link' }
+    verify(fauxCID, expected)
+  })
+
   it('bytes', () => {
     const expected = { schema: { types: { $Bytes: { kind: 'bytes' } } }, root: '$Bytes' }
     verify(Uint8Array.from([1, 3, 4, 5]), expected)
@@ -64,8 +72,25 @@ describe('Basics', () => {
     verify(obj, expected)
   })
 
+  it('empty map', () => {
+    const obj = {}
+    const expected = {
+      schema: {
+        types: {
+          $Map_1: {
+            kind: 'map',
+            keyType: 'String',
+            valueType: 'Any'
+          }
+        }
+      },
+      root: '$Map_1'
+    }
+    verify(obj, expected)
+  })
+
   it('struct (map repr)', () => {
-    const obj = { s: 'a string', i: 101 }
+    const obj = { s: 'a string', i: 101, l: fauxCID }
     const expected = {
       schema: {
         types: {
@@ -73,7 +98,8 @@ describe('Basics', () => {
             kind: 'struct',
             fields: {
               s: { type: 'String' },
-              i: { type: 'Int' }
+              i: { type: 'Int' },
+              l: { type: { kind: 'link' } }
             }
           }
         }
@@ -91,6 +117,22 @@ describe('Basics', () => {
           $List_1: {
             kind: 'list',
             valueType: 'String'
+          }
+        }
+      },
+      root: '$List_1'
+    }
+    verify(obj, expected)
+  })
+
+  it('empty list', () => {
+    const obj = []
+    const expected = {
+      schema: {
+        types: {
+          $List_1: {
+            kind: 'list',
+            valueType: 'Any'
           }
         }
       },

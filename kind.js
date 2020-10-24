@@ -26,5 +26,5 @@ export default function kind (obj) {
   if (typeof obj === 'object') {
     return 'map'
   }
-  throw new TypeError(`Unknown IPLD kind for ${String(obj)}`)
+  throw new TypeError(`Unknown IPLD kind for value: ${JSON.stringify(obj)}`)
 }

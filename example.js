@@ -1,4 +1,4 @@
-import schemaDescribe from 'ipld-schema-describe'
+import SchemaDescriber from 'ipld-schema-describer'
 import schemaPrint from 'ipld-schema/print.js'
 
 const obj = {
@@ -7,6 +7,6 @@ const obj = {
   baz: 'baz'
 }
 
-const { schema, root } = schemaDescribe(obj)
+const { schema, root } = SchemaDescriber.describe(obj)
 console.log(schemaPrint(schema))
-console.log('\nRoot: ', root)
+console.log('\nRoot:', root)
