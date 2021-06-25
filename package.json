@@ -4,6 +4,7 @@
   "description": "IPLD Schema Describer",
   "main": "ipld-schema-describer.js",
   "type": "module",
+  "types": "./types/ipld-schema-describer.d.ts",
   "scripts": {
     "lint": "standard",
     "build": "npm run build:js && npm run build:types",
@@ -46,6 +47,16 @@
   },
   "dependencies": {
     "ipld-schema": "^1.1.1"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "types/*"
+      ],
+      "types/*": [
+        "types/*"
+      ]
+    }
   },
   "release": {
     "branches": [
