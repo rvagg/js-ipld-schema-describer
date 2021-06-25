@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.0...v1.0.1) (2021-06-25)
+
+
+### Bug Fixes
+
+* release from /dist ([8858183](https://github.com/rvagg/js-ipld-schema-describer/commit/8858183f2d02873845216f403927a87cf5b00f62))
+
 ## [1.0.0](https://github.com/rvagg/js-ipld-schema-describer/compare/v0.0.0...v1.0.0) (2021-06-25)
 
 
