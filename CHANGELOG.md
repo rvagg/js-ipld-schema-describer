@@ -1,3 +1,10 @@
+### [1.0.2](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.1...v1.0.2) (2021-06-25)
+
+
+### Bug Fixes
+
+* export types properly ([908506a](https://github.com/rvagg/js-ipld-schema-describer/commit/908506a4aa750aca1f424d79ce48cf01c3724d3a))
+
 ### [1.0.1](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.0...v1.0.1) (2021-06-25)
 
 
