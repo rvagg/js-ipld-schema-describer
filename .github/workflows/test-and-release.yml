@@ -17,7 +17,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install Dependencies
         run: |
-          npm install --no-progress
+          npm install --no-progress --no-package-lock
       - name: Run tests
         run: |
           npm test
@@ -37,7 +37,7 @@ jobs:
           node-version: ${{ matrix.node }}
       - name: Install Dependencies
         run: |
-          npm install --no-progress
+          npm install --no-progress --no-package-lock
       - name: Run tests
         run: |
           npm run test:node
