@@ -5,7 +5,7 @@ Describe JavaScript object forms using [IPLD Schemas](https://specs.ipld.io/sche
 ## Example
 
 ```js
-import SchemaDescriber from 'ipld-schema-describer'
+import { describe } from 'ipld-schema-describer'
 import schemaPrint from 'ipld-schema/print.js'
 
 const obj = {
@@ -14,7 +14,7 @@ const obj = {
   baz: 'baz'
 }
 
-const { schema, root } = SchemaDescriber.describe(obj)
+const { schema, root } = describe(obj)
 console.log(schemaPrint(schema))
 console.log('\nRoot:', root)
 ```
@@ -22,21 +22,21 @@ console.log('\nRoot:', root)
 Prints:
 
 ```
-type $Struct_1 struct {
+type Struct_1 struct {
   f0 Int
   f1 String
   f2 Bool
 } representation tuple
 
-type $List_1 [Int]
+type List_1 [Int]
 
-type $Struct_2 struct {
-  foo $Struct_1
-  bar $List_1
+type Struct_2 struct {
+  foo Struct_1
+  bar List_1
   baz String
 }
 
-Root: $Struct_2
+Root: Struct_2
 ```
 
 ## Limitations

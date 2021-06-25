@@ -1,4 +1,12 @@
-export default function kind (obj) {
+/**
+ * @typedef {'bool'|'string'|'bytes'|'int'|'float'|'list'|'map'|'null'|'link'} RepresentationKindString
+ */
+
+/**
+ * @param {any} obj
+ * @returns {RepresentationKindString}
+ */
+export function kind (obj) {
   if (typeof obj === 'number') {
     if (Number.isInteger(obj)) {
       return 'int'

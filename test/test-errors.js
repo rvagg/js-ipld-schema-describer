@@ -1,12 +1,12 @@
 /* eslint-env mocha */
 
-import SchemaDescriber from 'ipld-schema-describer'
+import { describe as describeSchema } from 'ipld-schema-describer'
 import chai from 'chai'
 
 const { assert } = chai
 
 describe('Errors', () => {
   it('bad kind', () => {
-    assert.throws(() => SchemaDescriber.describe(undefined), /Unknown IPLD kind for value: undefined/)
+    assert.throws(() => describeSchema(undefined), /Unknown IPLD kind for value: undefined/)
   })
 })
