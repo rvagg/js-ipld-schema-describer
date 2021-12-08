@@ -1,3 +1,12 @@
+### [1.0.9](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.8...v1.0.9) (2021-12-08)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump polendina from 1.1.1 to 2.0.0 ([#15](https://github.com/rvagg/js-ipld-schema-describer/issues/15)) ([8cd6797](https://github.com/rvagg/js-ipld-schema-describer/commit/8cd679789a72da057d2a199437bb4c00f4db22d9))
+* **no-release:** bump actions/checkout from 2.3.4 to 2.4.0 ([#13](https://github.com/rvagg/js-ipld-schema-describer/issues/13)) ([e13e0ba](https://github.com/rvagg/js-ipld-schema-describer/commit/e13e0baeb5e968645405536e36637c3e4774ca37))
+* **no-release:** bump actions/setup-node from 2.4.1 to 2.5.0 ([#14](https://github.com/rvagg/js-ipld-schema-describer/issues/14)) ([7ed1d18](https://github.com/rvagg/js-ipld-schema-describer/commit/7ed1d1828be472f6d2ba776455574ef69369b1d3))
+
 ### [1.0.8](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.7...v1.0.8) (2021-09-28)
 
 
