@@ -1,3 +1,18 @@
+### [1.0.10](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.9...v1.0.10) (2022-05-03)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump mocha from 9.2.2 to 10.0.0 ([821e3e7](https://github.com/rvagg/js-ipld-schema-describer/commit/821e3e741b3c1cb4e09a113f1ef371054ee9f635))
+* **deps:** bump ipld-schema from 1.1.6 to 2.0.1 ([129962f](https://github.com/rvagg/js-ipld-schema-describer/commit/129962f675c5d3f6e5b20bd8d0913eef3bb60715))
+* **no-release:** bump actions/checkout from 2.4.0 to 3 ([#18](https://github.com/rvagg/js-ipld-schema-describer/issues/18)) ([745c567](https://github.com/rvagg/js-ipld-schema-describer/commit/745c5677750506af5af7def747a3e5a2df94b608))
+* **no-release:** bump actions/setup-node from 2.5.0 to 2.5.1 ([#16](https://github.com/rvagg/js-ipld-schema-describer/issues/16)) ([2df4709](https://github.com/rvagg/js-ipld-schema-describer/commit/2df470989f326cacc10bfe3209251e844864d986))
+* **no-release:** bump actions/setup-node from 2.5.1 to 3.0.0 ([#17](https://github.com/rvagg/js-ipld-schema-describer/issues/17)) ([34aaaf8](https://github.com/rvagg/js-ipld-schema-describer/commit/34aaaf85cb915fbbac7298e7380fcb6b14a479cd))
+* **no-release:** bump actions/setup-node from 3.0.0 to 3.1.0 ([#19](https://github.com/rvagg/js-ipld-schema-describer/issues/19)) ([a6965ba](https://github.com/rvagg/js-ipld-schema-describer/commit/a6965ba4c2891f41a086f3db2094978c21c66aac))
+* **no-release:** bump actions/setup-node from 3.1.0 to 3.1.1 ([#20](https://github.com/rvagg/js-ipld-schema-describer/issues/20)) ([6851b6c](https://github.com/rvagg/js-ipld-schema-describer/commit/6851b6c1cda45150171ce4dfc7700b9970c32b3e))
+* **no-release:** bump polendina from 2.0.15 to 3.0.0 ([#23](https://github.com/rvagg/js-ipld-schema-describer/issues/23)) ([44570a3](https://github.com/rvagg/js-ipld-schema-describer/commit/44570a32e66c3ade1b5567a1019326c2af9f3e93))
+* **no-release:** bump standard from 16.0.4 to 17.0.0 ([#21](https://github.com/rvagg/js-ipld-schema-describer/issues/21)) ([baf8f6c](https://github.com/rvagg/js-ipld-schema-describer/commit/baf8f6ca17f74af5ed16811381d0d84c3fdc6f7f))
+
 ### [1.0.9](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.8...v1.0.9) (2021-12-08)
 
 
