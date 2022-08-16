@@ -2,9 +2,9 @@ import { kind } from './kind.js'
 
 /**
  * @typedef {import('ipld-schema/schema-schema').Schema} Schema
- * @typedef {import('ipld-schema/schema-schema').TypeLink} TypeLink
- * @typedef {import('ipld-schema/schema-schema').TypeList} TypeList
- * @typedef {import('ipld-schema/schema-schema').TypeMap} TypeMap
+ * @typedef {import('ipld-schema/schema-schema').TypeDefnLink} TypeDefnLink
+ * @typedef {import('ipld-schema/schema-schema').TypeDefnList} TypeDefnList
+ * @typedef {import('ipld-schema/schema-schema').TypeDefnMap} TypeDefnMap
  */
 
 /**
@@ -18,14 +18,14 @@ export function describe (obj) {
     // something to point to for our root rather than the plain typed kind
 
     // special case for links
-    if (typeof description.root === 'object' && description.root.kind === 'link') {
+    if (typeof description.root === 'object' && typeof description.root.link === 'object') {
       const name = 'Link'
-      description.schema.types[name] = { kind: 'link' }
+      description.schema.types[name] = { link: {} }
       description.root = name
     } else if (typeof description.root === 'string') {
       const name = `${description.root}`
       // @ts-ignore
-      description.schema.types[name] = { kind: description.root.toLowerCase() }
+      description.schema.types[name] = { [description.root.toLowerCase()]: {} }
       description.root = name
       /* c8 ignore next 3 */
     } else {
@@ -42,7 +42,7 @@ export function describe (obj) {
 /**
  * @param {any} obj
  * @param {Schema} schema
- * @returns {{ schema: Schema, root: string|TypeLink }}
+ * @returns {{ schema: Schema, root: string|{ link: TypeDefnLink } }}
  */
 function describeObject (obj, schema) {
   const objKind = kind(obj)
@@ -59,12 +59,12 @@ function describeObject (obj, schema) {
   }
 
   if (objKind === 'link') {
-    return { schema, root: { kind: 'link' } }
+    return { schema, root: { link: {} } }
   }
 
   // 'map' || 'list'
 
-  /** @type {{ fieldName: string, root: string|TypeLink }[]} */
+  /** @type {{ fieldName: string, root: string|{ link: TypeDefnLink }}[]} */
   const fieldNames = []
   const entries = objKind === 'map'
     ? Object.entries(obj)
@@ -83,32 +83,29 @@ function describeObject (obj, schema) {
   }
 
   name = `${name}_1`
-  /** @type {{ kind: 'map', keyType?: string, valueType?: string|TypeLink }|{ kind: 'list', valueType?: string|TypeLink}|{ kind: 'struct', fields: { [ k in string]: { type: string | TypeLink } }, representation?: { tuple: {} } }} */
+  /** @type {{ map: { keyType?: string, valueType?: string|{ link: TypeDefnLink } } }|{ list: { valueType?: string|{ link: TypeDefnLink } } }|{ struct: { fields: { [ k in string]: { type: string | { link: TypeDefnLink } } }, representation?: { tuple: {} } } } } */
   let type
 
   if (unique) { // a pure map or list
-    type = { kind: objKind }
-    if (type.kind === 'map') {
-      type.keyType = 'String'
-    }
-    if (type.kind === 'map' || type.kind === 'list') {
-      if (fieldNames.length) {
-        type.valueType = fieldNames[0].root
-      } else {
-        type.valueType = 'Any'
-      }
+    const valueType = fieldNames.length ? fieldNames[0].root : 'Any'
+    if (objKind === 'map') {
+      type = { map: { keyType: 'String', valueType } }
+    } else if (objKind === 'list') {
+      type = { list: { valueType } }
+      /* c8 ignore next 4 */
+    } else {
+      throw new Error(`Unexpected object kind: ${objKind}`)
     }
   } else { // a struct with varying types
     name = 'Struct_1'
     type = {
-      kind: 'struct',
-      fields: {}
+      struct: { fields: {} }
     }
     for (const field of fieldNames) {
-      type.fields[field.fieldName] = { type: field.root }
+      type.struct.fields[field.fieldName] = { type: field.root }
     }
     if (objKind === 'list') {
-      type.representation = { tuple: {} }
+      type.struct.representation = { tuple: {} }
     }
   }
 
