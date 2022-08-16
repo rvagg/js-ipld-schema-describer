@@ -1,3 +1,29 @@
+## [2.0.0](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.10...v2.0.0) (2022-08-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* publish as ESM-only
+* update dependencies, upgrade schema DMT & library usage
+
+### Features
+
+* publish as ESM-only ([ea4a423](https://github.com/rvagg/js-ipld-schema-describer/commit/ea4a4235a8f0373d8403a4b5a54c74327ffdf1e9))
+* update dependencies, upgrade schema DMT & library usage ([c236af1](https://github.com/rvagg/js-ipld-schema-describer/commit/c236af1793f627f30a89d69c9eaf29f0cab82f2c))
+
+
+### Bug Fixes
+
+* update action ([418ce94](https://github.com/rvagg/js-ipld-schema-describer/commit/418ce945da4b49cc5270a790760d44f2f7bee767))
+
+
+### Trivial Changes
+
+* **no-release:** bump actions/setup-node from 3.1.1 to 3.2.0 ([#24](https://github.com/rvagg/js-ipld-schema-describer/issues/24)) ([81caebc](https://github.com/rvagg/js-ipld-schema-describer/commit/81caebc7af4b901a97f4712831cf985b36a1cd39))
+* **no-release:** bump actions/setup-node from 3.2.0 to 3.3.0 ([#25](https://github.com/rvagg/js-ipld-schema-describer/issues/25)) ([4da7e2c](https://github.com/rvagg/js-ipld-schema-describer/commit/4da7e2c9e85997603a58d2ff26615be2d6e549b6))
+* **no-release:** bump actions/setup-node from 3.3.0 to 3.4.0 ([#27](https://github.com/rvagg/js-ipld-schema-describer/issues/27)) ([a6d1ecb](https://github.com/rvagg/js-ipld-schema-describer/commit/a6d1ecbe2ed18388f40455a9485251bc6c358b70))
+* **no-release:** bump actions/setup-node from 3.4.0 to 3.4.1 ([#28](https://github.com/rvagg/js-ipld-schema-describer/issues/28)) ([18bd605](https://github.com/rvagg/js-ipld-schema-describer/commit/18bd605284572fd18345021a240a92246df357d9))
+
 ### [1.0.10](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.9...v1.0.10) (2022-05-03)
 
 
