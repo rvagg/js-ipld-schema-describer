@@ -1,6 +1,6 @@
 import { describe } from 'ipld-schema-describer'
 // @ts-ignore
-import schemaPrint from 'ipld-schema/print.js'
+import { print as schemaPrint } from 'ipld-schema/print.js'
 
 const obj = {
   foo: [1, 'one', true],

@@ -15,42 +15,42 @@ function verify (obj, expected) {
 
 describe('Basics', () => {
   it('null', () => {
-    const expected = { schema: { types: { Null: { kind: 'null' } } }, root: 'Null' }
+    const expected = { schema: { types: { Null: { null: {} } } }, root: 'Null' }
     verify(null, expected)
   })
 
   it('bool', () => {
-    const expected = { schema: { types: { Bool: { kind: 'bool' } } }, root: 'Bool' }
+    const expected = { schema: { types: { Bool: { bool: {} } } }, root: 'Bool' }
     verify(true, expected)
     verify(false, expected)
   })
 
   it('int', () => {
-    const expected = { schema: { types: { Int: { kind: 'int' } } }, root: 'Int' }
+    const expected = { schema: { types: { Int: { int: {} } } }, root: 'Int' }
     verify(101, expected)
     verify(-101, expected)
     verify(0, expected)
   })
 
   it('float', () => {
-    const expected = { schema: { types: { Float: { kind: 'float' } } }, root: 'Float' }
+    const expected = { schema: { types: { Float: { float: {} } } }, root: 'Float' }
     verify(1.01, expected)
     verify(-1.01, expected)
   })
 
   it('string', () => {
-    const expected = { schema: { types: { String: { kind: 'string' } } }, root: 'String' }
+    const expected = { schema: { types: { String: { string: {} } } }, root: 'String' }
     verify('a string', expected)
     verify('', expected)
   })
 
   it('link', () => {
-    const expected = { schema: { types: { Link: { kind: 'link' } } }, root: 'Link' }
+    const expected = { schema: { types: { Link: { link: {} } } }, root: 'Link' }
     verify(fauxCID, expected)
   })
 
   it('bytes', () => {
-    const expected = { schema: { types: { Bytes: { kind: 'bytes' } } }, root: 'Bytes' }
+    const expected = { schema: { types: { Bytes: { bytes: {} } } }, root: 'Bytes' }
     verify(Uint8Array.from([1, 3, 4, 5]), expected)
     verify(Uint8Array.from([]), expected)
   })
@@ -61,9 +61,10 @@ describe('Basics', () => {
       schema: {
         types: {
           Map_1: {
-            kind: 'map',
-            keyType: 'String',
-            valueType: 'String'
+            map: {
+              keyType: 'String',
+              valueType: 'String'
+            }
           }
         }
       },
@@ -78,9 +79,10 @@ describe('Basics', () => {
       schema: {
         types: {
           Map_1: {
-            kind: 'map',
-            keyType: 'String',
-            valueType: 'Any'
+            map: {
+              keyType: 'String',
+              valueType: 'Any'
+            }
           }
         }
       },
@@ -95,11 +97,12 @@ describe('Basics', () => {
       schema: {
         types: {
           Struct_1: {
-            kind: 'struct',
-            fields: {
-              s: { type: 'String' },
-              i: { type: 'Int' },
-              l: { type: { kind: 'link' } }
+            struct: {
+              fields: {
+                s: { type: 'String' },
+                i: { type: 'Int' },
+                l: { type: { link: {} } }
+              }
             }
           }
         }
@@ -115,8 +118,9 @@ describe('Basics', () => {
       schema: {
         types: {
           List_1: {
-            kind: 'list',
-            valueType: 'String'
+            list: {
+              valueType: 'String'
+            }
           }
         }
       },
@@ -131,8 +135,9 @@ describe('Basics', () => {
       schema: {
         types: {
           List_1: {
-            kind: 'list',
-            valueType: 'Any'
+            list: {
+              valueType: 'Any'
+            }
           }
         }
       },
@@ -147,14 +152,15 @@ describe('Basics', () => {
       schema: {
         types: {
           Struct_1: {
-            kind: 'struct',
-            fields: {
-              f0: { type: 'String' },
-              f1: { type: 'Int' },
-              f2: { type: 'Bool' },
-              f3: { type: 'Null' }
-            },
-            representation: { tuple: {} }
+            struct: {
+              fields: {
+                f0: { type: 'String' },
+                f1: { type: 'Int' },
+                f2: { type: 'Bool' },
+                f3: { type: 'Null' }
+              },
+              representation: { tuple: {} }
+            }
           }
         }
       },
@@ -172,12 +178,14 @@ describe('Complex', () => {
       schema: {
         types: {
           List_1: {
-            kind: 'list',
-            valueType: 'String'
+            list: {
+              valueType: 'String'
+            }
           },
           List_2: {
-            kind: 'list',
-            valueType: 'List_1'
+            list: {
+              valueType: 'List_1'
+            }
           }
         }
       },
@@ -193,14 +201,16 @@ describe('Complex', () => {
       schema: {
         types: {
           Map_1: {
-            kind: 'map',
-            keyType: 'String',
-            valueType: 'String'
+            map: {
+              keyType: 'String',
+              valueType: 'String'
+            }
           },
           Map_2: {
-            kind: 'map',
-            keyType: 'String',
-            valueType: 'Map_1'
+            map: {
+              keyType: 'String',
+              valueType: 'Map_1'
+            }
           }
         }
       },
@@ -215,22 +225,24 @@ describe('Complex', () => {
       schema: {
         types: {
           Struct_1: {
-            kind: 'struct',
-            fields: {
-              f0: { type: 'String' },
-              f1: { type: 'Bool' }
-            },
-            representation: { tuple: {} }
+            struct: {
+              fields: {
+                f0: { type: 'String' },
+                f1: { type: 'Bool' }
+              },
+              representation: { tuple: {} }
+            }
           },
           Struct_2: {
-            kind: 'struct',
-            fields: {
-              f0: { type: 'String' },
-              f1: { type: 'Int' },
-              f2: { type: 'Struct_1' },
-              f3: { type: 'Struct_1' }
-            },
-            representation: { tuple: {} }
+            struct: {
+              fields: {
+                f0: { type: 'String' },
+                f1: { type: 'Int' },
+                f2: { type: 'Struct_1' },
+                f3: { type: 'Struct_1' }
+              },
+              representation: { tuple: {} }
+            }
           }
         }
       },

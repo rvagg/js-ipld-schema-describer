@@ -37,16 +37,16 @@
   },
   "homepage": "https://github.com/rvagg/js-ipld-schema-describer#readme",
   "devDependencies": {
-    "c8": "^7.7.3",
-    "chai": "^4.3.4",
-    "ipjs": "^5.0.4",
+    "c8": "^7.12.0",
+    "chai": "^4.3.6",
+    "ipjs": "^5.2.0",
     "mocha": "^10.0.0",
-    "polendina": "^3.0.0",
+    "polendina": "^3.1.0",
     "standard": "^17.0.0",
-    "typescript": "^4.3.5"
+    "typescript": "^4.7.4"
   },
   "dependencies": {
-    "ipld-schema": "^2.0.1"
+    "ipld-schema": "^3.0.2"
   },
   "typesVersions": {
     "*": {
