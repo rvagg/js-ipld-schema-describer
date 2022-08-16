@@ -7,14 +7,11 @@
   "types": "./types/ipld-schema-describer.d.ts",
   "scripts": {
     "lint": "standard",
-    "build": "npm run build:js && npm run build:types",
-    "build:js": "ipjs build --tests --main && npm run build:copy",
-    "build:copy": "cp -a tsconfig.json *.js dist/",
-    "build:types": "tsc --build && mv types dist",
-    "test:cjs": "npm run build && mocha dist/cjs/node-test/test-*.js",
+    "build": "npm run build:types",
+    "build:types": "tsc --build",
     "test:node": "c8 --check-coverage --branches 100 --functions 100 --lines 100  mocha test/test-*.js",
-    "test:browser": "polendina --cleanup dist/cjs/node-test/test-*.js",
-    "test": "npm run lint && npm run test:node && npm run test:cjs && npm run test:browser",
+    "test:browser": "polendina --cleanup test/test-*.js",
+    "test": "npm run lint && npm run build && npm run test:node && npm run test:browser",
     "coverage": "c8 --reporter=html mocha test/test-*.js && npx st -d coverage -p 8080"
   },
   "exports": {
@@ -39,7 +36,6 @@
   "devDependencies": {
     "c8": "^7.12.0",
     "chai": "^4.3.6",
-    "ipjs": "^5.2.0",
     "mocha": "^10.0.0",
     "polendina": "^3.1.0",
     "standard": "^17.0.0",
@@ -134,12 +130,7 @@
         }
       ],
       "@semantic-release/changelog",
-      [
-        "@semantic-release/npm",
-        {
-          "pkgRoot": "dist"
-        }
-      ],
+      "@semantic-release/npm",
       "@semantic-release/github",
       "@semantic-release/git"
     ]
