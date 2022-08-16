@@ -1,0 +1,1 @@
+{"version":3,"file":"ipld-schema-describer.d.ts","sourceRoot":"","sources":["../ipld-schema-describer.js"],"names":[],"mappings":"AAEA;;;;;GAKG;AAEH;;;GAGG;AACH,8BAHW,GAAG,GACD;IAAE,MAAM,EAAE,MAAM,CAAC;IAAC,IAAI,EAAE,MAAM,CAAA;CAAE,CA4B5C;qBApCY,OAAO,2BAA2B,EAAE,MAAM;2BAC1C,OAAO,2BAA2B,EAAE,YAAY;2BAChD,OAAO,2BAA2B,EAAE,YAAY;0BAChD,OAAO,2BAA2B,EAAE,WAAW"}

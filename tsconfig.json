@@ -33,7 +33,7 @@
   },
   "exclude": [
     "node_modules",
-    "dist",
+    "types",
     "test"
   ],
   "compileOnSave": false
