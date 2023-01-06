@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/rvagg/js-ipld-schema-describer/compare/v2.0.0...v2.0.1) (2023-01-06)
+
+
+### Trivial Changes
+
+* **deps:** bump actions/setup-node from 3.5.1 to 3.6.0 ([#33](https://github.com/rvagg/js-ipld-schema-describer/issues/33)) ([b45e364](https://github.com/rvagg/js-ipld-schema-describer/commit/b45e364442418099df87c9a1d0032ba449913021))
+* **no-release:** bump actions/setup-node from 3.4.1 to 3.5.0 ([#31](https://github.com/rvagg/js-ipld-schema-describer/issues/31)) ([b2eab03](https://github.com/rvagg/js-ipld-schema-describer/commit/b2eab0361f064db9971876624dbcd7b8647d4988))
+* **no-release:** bump actions/setup-node from 3.5.0 to 3.5.1 ([#32](https://github.com/rvagg/js-ipld-schema-describer/issues/32)) ([4e66571](https://github.com/rvagg/js-ipld-schema-describer/commit/4e665713a6c464e834f21e474239c496ac7e9e69))
+
 ## [2.0.0](https://github.com/rvagg/js-ipld-schema-describer/compare/v1.0.10...v2.0.0) (2022-08-16)
 
 
