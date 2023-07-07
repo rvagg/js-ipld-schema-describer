@@ -1,3 +1,16 @@
+## [3.0.0](https://github.com/rvagg/js-ipld-schema-describer/compare/v2.0.1...v3.0.0) (2023-07-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop node 14.x support, add 18.x and current
+
+### Trivial Changes
+
+* **deps-dev:** bump typescript from 4.9.5 to 5.0.2 ([0ebf508](https://github.com/rvagg/js-ipld-schema-describer/commit/0ebf5085a1427f198ce35179d7fcd7e2d871ead2))
+* **deps:** bump actions/setup-node from 3.6.0 to 3.7.0 ([51a2712](https://github.com/rvagg/js-ipld-schema-describer/commit/51a27122849a2e0e2761cb3866db2f2c853492f4))
+* drop node 14.x support, add 18.x and current ([313d283](https://github.com/rvagg/js-ipld-schema-describer/commit/313d2832e0019afb471bca1e4a2d4459172bac4e))
+
 ## [2.0.1](https://github.com/rvagg/js-ipld-schema-describer/compare/v2.0.0...v2.0.1) (2023-01-06)
 
 
