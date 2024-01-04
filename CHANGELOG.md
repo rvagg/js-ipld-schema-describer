@@ -1,3 +1,10 @@
+## [3.0.6](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.5...v3.0.6) (2024-01-04)
+
+
+### Trivial Changes
+
+* **deps-dev:** bump c8 from 8.0.1 to 9.0.0 ([2f8adee](https://github.com/rvagg/js-ipld-schema-describer/commit/2f8adee56a95fbf0e21f8f32ff5225fc18e2c4d3))
+
 ## [3.0.5](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.4...v3.0.5) (2024-01-01)
 
 
