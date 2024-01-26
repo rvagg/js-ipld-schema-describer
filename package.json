@@ -35,7 +35,7 @@
   "homepage": "https://github.com/rvagg/js-ipld-schema-describer#readme",
   "devDependencies": {
     "c8": "^9.0.0",
-    "chai": "^4.3.6",
+    "chai": "^5.0.3",
     "mocha": "^10.0.0",
     "polendina": "^3.1.0",
     "standard": "^17.0.0",
