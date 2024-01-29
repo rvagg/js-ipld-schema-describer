@@ -1,9 +1,7 @@
 /* eslint-env mocha */
 
 import { describe as describeSchema } from 'ipld-schema-describer'
-import chai from 'chai'
-
-const { assert } = chai
+import { assert } from 'chai'
 
 describe('Errors', () => {
   it('bad kind', () => {
