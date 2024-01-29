@@ -1,3 +1,10 @@
+## [3.0.7](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.6...v3.0.7) (2024-01-29)
+
+
+### Trivial Changes
+
+* update dependencies ([928cb80](https://github.com/rvagg/js-ipld-schema-describer/commit/928cb8093c9434f4264ba36c063161ec86f9ab9b))
+
 ## [3.0.6](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.5...v3.0.6) (2024-01-04)
 
 
