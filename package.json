@@ -1,6 +1,6 @@
 {
   "name": "ipld-schema-describer",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "IPLD Schema Describer",
   "main": "ipld-schema-describer.js",
   "type": "module",
