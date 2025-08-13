@@ -1,3 +1,10 @@
+## [3.0.16](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.15...v3.0.16) (2025-08-13)
+
+### Trivial Changes
+
+* **deps:** bump actions/checkout from 4 to 5 ([#55](https://github.com/rvagg/js-ipld-schema-describer/issues/55)) ([08cd313](https://github.com/rvagg/js-ipld-schema-describer/commit/08cd3136595eae33aaa3aeef8ab45044220d4b25))
+* remove specific node.js versions from CI ([06429a2](https://github.com/rvagg/js-ipld-schema-describer/commit/06429a27bed54d5bd808c0f8d1546b6b29787133))
+
 ## [3.0.15](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.14...v3.0.15) (2025-04-14)
 
 ### Trivial Changes
