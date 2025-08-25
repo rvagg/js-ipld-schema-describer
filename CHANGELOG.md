@@ -1,3 +1,9 @@
+## [3.0.17](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.16...v3.0.17) (2025-08-25)
+
+### Trivial Changes
+
+* **deps-dev:** bump chai from 5.3.3 to 6.0.1 ([#56](https://github.com/rvagg/js-ipld-schema-describer/issues/56)) ([e97803a](https://github.com/rvagg/js-ipld-schema-describer/commit/e97803a7316b83eb91ddd65157d51398d4bde18a))
+
 ## [3.0.16](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.15...v3.0.16) (2025-08-13)
 
 ### Trivial Changes
