@@ -1,5 +1,9 @@
 # ipld-schema-describer
 
+[![CI](https://github.com/rvagg/js-ipld-schema-describe/actions/workflows/test-and-release.yml/badge.svg)](https://github.com/rvagg/js-ipld-schema-describe/actions/workflows/test-and-release.yml)
+
+[![NPM](https://nodei.co/npm/ipld-schema-describer.svg?style=flat&data=n,v&color=blue)](https://nodei.co/npm/ipld-schema-describer/)
+
 Describe JavaScript object forms using [IPLD Schemas](https://specs.ipld.io/schemas/).
 
 ## Example
