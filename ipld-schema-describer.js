@@ -1,10 +1,10 @@
 import { kind } from './kind.js'
 
 /**
- * @typedef {import('ipld-schema/schema-schema').Schema} Schema
- * @typedef {import('ipld-schema/schema-schema').TypeDefnLink} TypeDefnLink
- * @typedef {import('ipld-schema/schema-schema').TypeDefnList} TypeDefnList
- * @typedef {import('ipld-schema/schema-schema').TypeDefnMap} TypeDefnMap
+ * @typedef {import('@ipld/schema/schema-schema.js').Schema} Schema
+ * @typedef {import('@ipld/schema/schema-schema.js').TypeDefnLink} TypeDefnLink
+ * @typedef {import('@ipld/schema/schema-schema.js').TypeDefnList} TypeDefnList
+ * @typedef {import('@ipld/schema/schema-schema.js').TypeDefnMap} TypeDefnMap
  */
 
 /**

@@ -17,24 +17,21 @@
     "alwaysStrict": true,
     "esModuleInterop": true,
     "target": "ES2018",
-    "module": "ESNext",
-    "moduleResolution": "node",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "declaration": true,
     "declarationMap": true,
     "outDir": "types",
     "skipLibCheck": true,
     "stripInternal": true,
     "resolveJsonModule": true,
-    "emitDeclarationOnly": true,
-    "baseUrl": ".",
-    "paths": {
-      "ipld-schema-describer": [ "ipld-schema-describer.js" ]
-    }
+    "emitDeclarationOnly": true
   },
   "exclude": [
     "node_modules",
     "types",
-    "test"
+    "test",
+    "example.js"
   ],
   "compileOnSave": false
 }

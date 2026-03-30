@@ -6,5 +6,5 @@
  * @returns {RepresentationKindString}
  */
 export function kind(obj: any): RepresentationKindString;
-export type RepresentationKindString = 'bool' | 'string' | 'bytes' | 'int' | 'float' | 'list' | 'map' | 'null' | 'link';
+export type RepresentationKindString = "bool" | "string" | "bytes" | "int" | "float" | "list" | "map" | "null" | "link";
 //# sourceMappingURL=kind.d.ts.map
