@@ -1,2 +1,5 @@
 node_modules/
+coverage/types/tsconfig.tsbuildinfo
+types/tsconfig.tsbuildinfo
+package-lock.json
 coverage/
