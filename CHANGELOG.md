@@ -1,3 +1,11 @@
+## [3.0.22](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.21...v3.0.22) (2026-03-30)
+
+### Trivial Changes
+
+* **deps-dev:** bump typescript from 5.9.3 to 6.0.2 ([a33822f](https://github.com/rvagg/js-ipld-schema-describer/commit/a33822f50c492ab366cc80bfa4b7acb18d202847))
+* **deps:** bump actions/setup-node from 6.2.0 to 6.3.0 ([#64](https://github.com/rvagg/js-ipld-schema-describer/issues/64)) ([6febd34](https://github.com/rvagg/js-ipld-schema-describer/commit/6febd348ac72518fd0d2dfaae53358b648a41591))
+* update deps & upgrade to typescript 6 ([62e5dfb](https://github.com/rvagg/js-ipld-schema-describer/commit/62e5dfb4690451b6172bdddc9c68fc210a4d1565))
+
 ## [3.0.21](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.20...v3.0.21) (2026-01-21)
 
 ### Trivial Changes
