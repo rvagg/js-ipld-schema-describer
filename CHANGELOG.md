@@ -1,3 +1,9 @@
+## [3.0.23](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.22...v3.0.23) (2026-04-28)
+
+### Trivial Changes
+
+* **deps:** bump actions/setup-node from 6.3.0 to 6.4.0 ([#66](https://github.com/rvagg/js-ipld-schema-describer/issues/66)) ([45d97ba](https://github.com/rvagg/js-ipld-schema-describer/commit/45d97ba33389133edf0309c2304798b9069dbb3d))
+
 ## [3.0.22](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.21...v3.0.22) (2026-03-30)
 
 ### Trivial Changes
