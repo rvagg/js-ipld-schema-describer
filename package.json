@@ -39,7 +39,7 @@
     "mocha": "^11.7.5",
     "polendina": "^3.2.20",
     "standard": "^17.1.2",
-    "typescript": "^6.0.2"
+    "typescript": "^7.0.2"
   },
   "dependencies": {
     "@ipld/schema": "^7.0.11"
