@@ -1,3 +1,5 @@
+## [3.0.25](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.24...v3.0.25) (2026-07-09)
+
 ## [3.0.24](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.23...v3.0.24) (2026-06-22)
 
 ### Trivial Changes
