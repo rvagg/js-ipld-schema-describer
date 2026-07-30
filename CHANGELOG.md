@@ -1,3 +1,9 @@
+## [3.0.26](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.25...v3.0.26) (2026-07-30)
+
+### Trivial Changes
+
+* downgrade broken changelog maker, backfill entries ([#70](https://github.com/rvagg/js-ipld-schema-describer/issues/70)) ([a119e24](https://github.com/rvagg/js-ipld-schema-describer/commit/a119e24c7a9b1c2a684deb8f6df61f75c8d37f8e))
+
 ## [3.0.25](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.24...v3.0.25) (2026-07-09)
 
 ### Trivial Changes
