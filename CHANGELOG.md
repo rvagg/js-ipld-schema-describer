@@ -1,5 +1,10 @@
 ## [3.0.25](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.24...v3.0.25) (2026-07-09)
 
+### Trivial Changes
+
+* **deps-dev:** bump typescript from 6.0.3 to 7.0.2 ([#68](https://github.com/rvagg/js-ipld-schema-describer/issues/68)) ([35e7b1a](https://github.com/rvagg/js-ipld-schema-describer/commit/35e7b1a3ae99543c364456e7770833e92873b07e))
+* **deps:** switch to monthly dependabot, cooldown of 5 days ([#69](https://github.com/rvagg/js-ipld-schema-describer/issues/69)) ([de03cfa](https://github.com/rvagg/js-ipld-schema-describer/commit/de03cfa5a477ae5eeb150b8b35e8a20e6faf9e10))
+
 ## [3.0.24](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.23...v3.0.24) (2026-06-22)
 
 ### Trivial Changes
