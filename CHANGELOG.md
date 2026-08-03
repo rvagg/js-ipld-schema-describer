@@ -1,3 +1,9 @@
+## [3.0.27](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.26...v3.0.27) (2026-08-03)
+
+### Trivial Changes
+
+* **deps-dev:** bump c8 from 11.0.0 to 12.0.0 ([#72](https://github.com/rvagg/js-ipld-schema-describer/issues/72)) ([6778381](https://github.com/rvagg/js-ipld-schema-describer/commit/6778381da2805fe0c8240337ed5e14e6907a177d))
+
 ## [3.0.26](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.25...v3.0.26) (2026-07-30)
 
 ### Trivial Changes
