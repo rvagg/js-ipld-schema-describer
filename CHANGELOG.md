@@ -1,3 +1,9 @@
+## [3.0.29](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.28...v3.0.29) (2026-10-02)
+
+### Trivial Changes
+
+* **deps-dev:** bump mocha from 11.8.0 to 12.0.2 ([#75](https://github.com/rvagg/js-ipld-schema-describer/issues/75)) ([4dfd407](https://github.com/rvagg/js-ipld-schema-describer/commit/4dfd4078507ce0b2bb9b2d4cc8c2798785eb285f))
+
 ## [3.0.28](https://github.com/rvagg/js-ipld-schema-describer/compare/v3.0.27...v3.0.28) (2026-08-03)
 
 ### Trivial Changes
